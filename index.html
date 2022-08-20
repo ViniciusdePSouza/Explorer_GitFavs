@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Git Favs</title>
+
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <script src="js/main.js" type="module" defer></script>
+</head>
+
+<body>
+    <header>
+        <img src="./images/logo.svg" alt="Logo do aplicativo">
+
+        <div class="header-div">
+            <div class="input-wrapper">
+                <label for="username-input" class="sr-only">Digite o Github username que quer favoritar</label>
+                <input id="username-input" type="text" placeholder="Digite o Github username que quer favoritar">
+            </div>
+
+            <button><img src="./images/star.svg" alt="ícone para favoritar">Favoritar</button>
+        </div>
+    </header>
+
+    <div id="app">
+        <table>
+            <thead>
+                <tr>
+                    <th id="first-th">Usuário</th>
+                    <th>Repositories</th>
+                    <th>Followers</th>
+                    <th id="last-th">Ação</th>
+                </tr>
+            </thead>
+            <tbody></tbody>
+        </table>
+    </div>
+
+</body>
+
+</html>

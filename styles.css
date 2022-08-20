@@ -1,0 +1,206 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+
+    --ff-general: 'Roboto', sans-serif;
+    --txt-color: #E1E1E6;
+
+    --bg-color: #000000;
+    --table-primary-color: #092D38;
+    --table-secondary-color: rgba(6, 22, 27, 0.5);
+
+    --remove-button: #F75A68;
+    --fav-color: #065E7C;
+
+    --scrollbar-background: #4A808C;
+}
+
+body {
+    font-size: 1.6rem;
+    background-color: var(--bg-color);
+
+    max-width: 110rem;
+    margin: 0 auto;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-top: 11.5rem;
+    margin-bottom: 9rem;
+
+    padding: 0, 5rem;
+}
+
+header div {
+    display: flex;
+    align-items: center;
+
+    gap: 0.8rem;
+}
+
+header div button {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 1.2rem 3.2rem;
+    gap: 0.8rem;
+
+    border-radius: 0.5rem;
+
+    width: 17rem;
+    height: 4.8rem;
+
+    background: var(--fav-color);
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+    color: var(--txt-color);
+
+    cursor: pointer;
+
+    transition: all 0.3s
+}
+
+header div button:hover {
+    background: #FFFFFF;
+
+    color: #065E7C;
+    fill: #065E7C;
+}
+
+.input-wrapper {
+    display: flex;
+}
+
+.input-wrapper input {
+    width: 46.2rem;
+    height: 4.8rem;
+    padding: 1.6rem;
+    gap: 0.8rem;
+
+    background-color: var(--fav-color);
+    color: var(--txt-color);
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 100%;
+
+    border: none;
+    border-radius: 0.5rem;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+}
+
+tbody img {
+    width: 5.6rem;
+    height: 5.6rem;
+
+    border-radius: 50%;
+}
+
+table {
+    text-align: left;
+    width: 100%;
+
+    background: var(--table-primary-color);
+    color: var(--txt-color);
+
+    border-collapse: collapse;
+    border-radius: 0.5rem;
+
+    border: 1px solid #3b7f8f;
+}
+
+table::-webkit-scrollbar-thumb {
+    width: .6rem;
+    height: 12.2rem;
+
+    background-color: var(--scrollbar-background);
+}
+
+table tr:nth-child(odd) {
+    background-color: var(--table-secondary-color);
+}
+
+table tr {
+    background-color: var(--table-primary-color);
+
+    border-top: 1px solid #3b7f8f;
+    border-bottom: 1px solid #3b7f8f;
+
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 160%;
+}
+
+table th {
+    background-color: var(--table-primary-color)
+}
+
+th {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 160%;
+
+    padding: 1.6rem 0 1.6rem 4rem;
+}
+
+td {
+    padding: 1.6rem 0 1.6rem 4rem;
+}
+
+td.user {
+    display: flex;
+    align-items: center;
+    gap: 2rem
+}
+
+td.user a {
+    color: var(--txt-color);
+    text-decoration: none;
+
+    display: flex;
+    flex-direction: column;
+    align-items: left;
+}
+
+td.remove-button button {
+    border: none;
+    background: transparent;
+
+    color: var(--remove-button);
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 2rem;
+    line-height: 160%;
+
+    cursor: pointer;
+}
