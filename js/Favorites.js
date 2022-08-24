@@ -16,13 +16,15 @@ export class Favorites {
 
     async addUser(newUser) {
       try {
-        const userExists = this.entries.find(entry => entry.login === newUser)
+        const userExists = this.entries.find(entry => 
+            entry.login.toLowerCase() === newUser.toLowerCase()
+            )
 
         if(userExists) {
             throw new Error('Usuário já cadastrado')
         }
 
-        const user = await GithubUser.search(newUser)
+        const user = await GithubHandle.search(newUser)
         
         if( user.login === undefined ) {
             throw new Error('Usuário não existe')
@@ -59,7 +61,7 @@ export class FavoritesView extends Favorites {
     }
 
     onAddUser() {
-        const addButton = this.root.querySelector('#addButton')
+        const addButton = this.root.querySelector('#add-button')
         addButton.onclick = () => {
             const { value } = this.root.querySelector('.input-wrapper input')
 
@@ -70,11 +72,11 @@ export class FavoritesView extends Favorites {
 
     update() {
         this.removeAllTr()
-
+        
         this.entries.forEach(user => {
             const row = this.createRow()
 
-            row.querySelector('.user img').src = `https://github.com/${user.login}.png`
+            row.querySelector('.user img').src = user.avatar_url
             row.querySelector('.user img').alt = `Foto de pergil de ${user.name}`
             row.querySelector('.user p').textContent = user.name
             row.querySelector('.user span').textContent = user.login
@@ -113,7 +115,6 @@ export class FavoritesView extends Favorites {
         </td>
         `
         return tr
-
     }
 
     removeAllTr() {

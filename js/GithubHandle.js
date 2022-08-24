@@ -4,7 +4,8 @@ export class GithubHandle {
 
         return fetch(endpoint)
             .then(data => data.json())
-            .then((login, name, public_repos, followers) => ({
+            .then(({login, name, public_repos, followers, avatar_url}) => ({
+                avatar_url,
                 login,
                 name,
                 public_repos,
